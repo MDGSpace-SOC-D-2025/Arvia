@@ -6,4 +6,4 @@ router = APIRouter()
 
 @router.post("/check-symptoms", response_model=SymptomResponse)
 async def check_symptoms(request: SymptomRequest):
-    return analyze_symptoms(request.symptoms)
+    return analyze_symptoms(request.symptoms) #(to be changed later)

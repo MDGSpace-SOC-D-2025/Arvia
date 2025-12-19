@@ -1,3 +1,4 @@
+#convert dictionary data into documents/text for RAG ingestion,returns list
 from app.data.symptom_data import SYMPTOM_DB
 
 def build_documents():

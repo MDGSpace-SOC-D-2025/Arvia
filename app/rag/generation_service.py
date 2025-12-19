@@ -8,7 +8,8 @@ def generate_answer(user_query: str, retrieved_docs: list):
         return "I could not find relevant medical information for your symptoms."
 
     # Take the most relevant document
-    top_doc = retrieved_docs[0]["document"]
+    top_doc = retrieved_docs[0]["document"]  #(retrival ranked documents by similarity, 0 idx means most relevant)
+
 
     response = (
         f"Based on the available medical information: {top_doc}. "

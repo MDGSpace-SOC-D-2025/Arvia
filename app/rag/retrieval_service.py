@@ -26,4 +26,4 @@ def retrieve_relevant_documents(query: str, top_k: int = 2):
             "score": float(score)
         })
 
-    return results
+    return results #(passed to generation service)

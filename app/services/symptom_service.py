@@ -1,22 +1,17 @@
-from app.data.symptom_data import SYMPTOM_DB
+from app.rag.retrieval_service import retrieve_relevant_documents
 
-def analyze_symptoms(text: str):
-    text = text.lower()
+from app.rag.generation_service import generate_answer
 
-    for symptom, info in SYMPTOM_DB.items():
-        if symptom in text:
-            return {
-                "detected_symptoms": symptom,
-                "possible_causes": info["possible_causes"],
-                "recommended_doctor": info["doctor"],
-                "self_care_tips": info["self_care"],
-                "disclaimer": "This is not a medical diagnosis."
-            }
+
+def analyze_symptoms(user_input: str): #(to be changed later)
+    # Step 1: Retrieve relevant documents
+    retrieved_docs = retrieve_relevant_documents(user_input)
+
+    # Step 2: Generate response using retrieved context
+    answer = generate_answer(user_input, retrieved_docs)
 
     return {
-        "detected_symptoms": "unknown",
-        "possible_causes": [],
-        "recommended_doctor": "General Physician",
-        "self_care_tips": [],
+        "answer": answer,
         "disclaimer": "This is not a medical diagnosis."
     }
+
