@@ -1,12 +1,12 @@
 from app.rag.generation_service import generate_answer
 from app.agents.query_refiner import refine_query
 from app.agents.severity_assessor import assess_severity
+from app.agents.doctor_finder import determine_specialization, find_nearby_doctors
 
-def analyze_symptoms(user_input: str):
+def analyze_symptoms(user_input: str, user_location: dict = None):
     """
-    Main analysis pipeline with both agents.
-    
-    Flow: User input → Agent-1 refines → Agent-2 assesses → RAG generates
+    Main symptom analysis pipeline.
+    Runs Agent-1 → Agent-2 → Agent-3 (if needed) → RAG
     """
     
     # Step 1: Refine the query (Agent-1)
@@ -16,31 +16,53 @@ def analyze_symptoms(user_input: str):
     # Step 2: Assess severity (Agent-2)
     # Determines if symptoms are mild/moderate/severe
     assessment = assess_severity(refined["refined_query"])
+
+    # Agent-3: find doctors if needed
+    recommended_spec = None
+    doctors_list = []
     
-    # Step 3: Generate response based on severity   this is where routing happens
-    # Different handling for different severity levels
+    
+    if assessment["needs_doctor"]:
+        # Determine doctor type
+        recommended_spec = determine_specialization(
+            symptoms=refined["refined_query"],
+            severity=assessment["severity"]
+        )
+        
+        # Find nearby if location provided
+        if user_location and "latitude" in user_location and "longitude" in user_location:
+            result = find_nearby_doctors(
+                specialization=recommended_spec,
+                latitude=user_location["latitude"],
+                longitude=user_location["longitude"]
+            )
+            
+            if result["success"]:
+                doctors_list = result["doctors"]
+    
+    # Generate RAG answer based on severity
     if assessment["severity"] == "SEVERE":
-        # Severe case: urgent message + RAG response
         answer = generate_answer(refined["refined_query"])
-        urgent_note = "URGENT: These symptoms require immediate medical attention. Please seek emergency care."
-        answer = f"{urgent_note}\n\n{answer}"
+        answer = f" URGENT: Seek immediate medical attention.\n\n{answer}"
         
     elif assessment["severity"] == "MODERATE":
-        # Moderate: normal RAG response + doctor recommendation
-        answer = generate_answer(refined["refined_query"])    #(need for doc=true, flag in metadata)
+        answer = generate_answer(refined["refined_query"])
+        if recommended_spec:
+            answer += f"\n\nRecommended: {recommended_spec}"
         
-    else:  # MILD
-        # Mild: RAG response with self-care emphasis
+    else:
         answer = generate_answer(refined["refined_query"])
     
-    # Step 4: Build response with all metadata, returning all metadata for transparency among users
+    # Return everything
     return {
         "answer": answer,
+        "disclaimer": "This is not a diagnosis. Consult a healthcare professional.",
         "original_query": refined["original_query"],
         "refined_query": refined["refined_query"],
+        "needs_clarification": refined["needs_clarification"],
         "severity": assessment["severity"],
         "severity_reasoning": assessment["reasoning"],
         "needs_doctor": assessment["needs_doctor"],
-        "needs_clarification": refined["needs_clarification"],
-        "disclaimer": "This is not a medical diagnosis. Consult a healthcare professional."
+        "recommended_specialization": recommended_spec,
+        "doctors_nearby": doctors_list
     }
