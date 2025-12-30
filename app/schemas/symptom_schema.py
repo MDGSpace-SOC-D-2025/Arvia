@@ -49,6 +49,7 @@ class SymptomResponse(BaseModel):
     # Agent-2: Severity Assessor
     severity: Optional[str] = None
     severity_reasoning: Optional[str] = None
+    severity_factors: Optional[List[str]] = []  # NEW FIELD ADDED - explains why this severity was chosen
     needs_doctor: Optional[bool] = False
     
     # Agent-3: Doctor Finder
