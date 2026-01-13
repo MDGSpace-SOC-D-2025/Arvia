@@ -10,10 +10,12 @@ class SymptomRequest(BaseModel):
     - symptoms: User's symptom description (required)
     - latitude: User's location latitude (optional, for doctor finder)
     - longitude: User's location longitude (optional, for doctor finder)
+     - session_id: Unique identifier for this conversation (optional)
     """
     symptoms: str
     latitude: Optional[float] = None  # Optional: only needed if user wants nearby doctors
     longitude: Optional[float] = None
+    session_id: Optional[str] = None  # for conversation memory
 
 
 class DoctorInfo(BaseModel):
@@ -56,5 +58,8 @@ class SymptomResponse(BaseModel):
     recommended_specialization: Optional[str] = None  # What type of doctor they need
     doctors_nearby: Optional[List[DoctorInfo]] = []  # List of nearby hospitals
     
-    # NEW: Remedies field for MILD cases
+    #  Remedies field for MILD cases
     remedies: Optional[List[str]] = []  # Home remedies when doctor not needed
+
+    # Return session_id back to user so they can use it next time
+    session_id: Optional[str] = None

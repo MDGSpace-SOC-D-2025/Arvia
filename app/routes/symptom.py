@@ -13,6 +13,7 @@ async def check_symptoms(request: SymptomRequest): # receive http request
     Accepts:
     - symptoms (required)
     - latitude, longitude (optional)
+    - session_id (optional) - for conversation continuity
     
     Returns complete analysis with doctor recommendations if applicable.
     """
@@ -26,6 +27,7 @@ async def check_symptoms(request: SymptomRequest): # receive http request
         }
     
     # Run the pipeline
-    result = analyze_symptoms(request.symptoms, user_location)
+    result = analyze_symptoms(request.symptoms, user_location,
+    session_id=request.session_id)
     
     return result
