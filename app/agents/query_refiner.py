@@ -8,18 +8,25 @@ llm = ChatGoogleGenerativeAI(
 )
 
 # Teaching Gemini to extract symptoms and mark vague inputs
+# NOW with conversation history support for better context understanding
 prompt = ChatPromptTemplate.from_template("""
 Extract medical symptoms from user input.
 
-User input: "{user_input}"
+{history_context}
 
-If input is vague (like "not feeling well"), start with [VAGUE].
-If specific symptoms mentioned, extract them.
+Current user input: "{user_input}"
+
+INSTRUCTIONS:
+- If there's previous conversation history above, use it to understand context
+- Example: If user said "headache" before and now says "worse", refine to "worsening headache"
+- If input is vague (like "not feeling well") and no history, start with [VAGUE]
+- If specific symptoms mentioned, extract them
 
 Examples:
 - "my head hurts" → headache
 - "not feeling well" → [VAGUE] general malaise
 - "stomach pain and nausea" → abdominal pain, nausea
+- Previous: "headache", Current: "it's worse" → worsening headache
 
 Extract:
 """)
@@ -27,9 +34,20 @@ Extract:
 chain = prompt | llm | StrOutputParser()
 
 
-def refine_query(user_input: str) -> dict:
+def refine_query(user_input: str, history_context: str = "") -> dict:
+    """
+    Refines user query into medical terms, now with conversation history support.
+    
+    Args:
+        user_input: What the user just said
+        history_context: Formatted conversation history (empty if new conversation)
+    """
     try:
-        result = chain.invoke({"user_input": user_input})
+        # pass both user input and history context to the LLM
+        result = chain.invoke({
+            "user_input": user_input,
+            "history_context": history_context
+        })
         
         # Check if vague
         is_vague = result.startswith("[VAGUE]")
@@ -53,6 +71,10 @@ def refine_query(user_input: str) -> dict:
 
 
 def extract_symptoms_structured(user_input: str) -> dict:
+    """
+    Extracts structured symptom data from user input.
+    Note: Not used in main pipeline, kept for backwards compatibility
+    """
     refined = refine_query(user_input)
     text = refined["refined_query"]
     

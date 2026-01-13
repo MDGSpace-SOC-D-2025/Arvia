@@ -2,16 +2,34 @@ from app.rag.generation_service import generate_answer, extract_remedies
 from app.agents.query_refiner import refine_query
 from app.agents.severity_assessor import assess_severity
 from app.agents.doctor_finder import determine_specialization, find_nearby_doctors
+from app.services.memory_service import add_to_history, format_history_for_llm
+import uuid # for generating unique session IDs
 
-def analyze_symptoms(user_input: str, user_location: dict = None):
+def analyze_symptoms(user_input: str, user_location: dict = None, session_id: str = None):
     """
     Main symptom analysis pipeline.
     Runs Agent-1 → Agent-2 → Agent-3 (if needed) → RAG
+    Now supports conversation memory via session_id
     """
+
+    # Handle session_id, if user didnt provide one, generate a new unique ID
+    if not session_id:
+        session_id = str(uuid.uuid4())  # Generate unique ID
+        print(f" New session created: {session_id}")
+    else:
+        print(f" Continuing session: {session_id}")
+
+    history_context = format_history_for_llm(session_id)  # get conversation history
+
+    if history_context:
+        print(f" Found previous conversation history")  # # to be apssed to agent 1
+       
+    else:
+        print(f" No previous history (new conversation)")
     
     # Step 1: Refine the query (Agent-1)
     # Converts casual language to medical terms
-    refined = refine_query(user_input)
+    refined = refine_query(user_input, history_context)
     # passing agent 1 result to agent 2
     # Step 2: Assess severity (Agent-2)
     # Determines if symptoms are mild/moderate/severe
@@ -59,7 +77,8 @@ def analyze_symptoms(user_input: str, user_location: dict = None):
         remedies_list = extract_remedies(refined["refined_query"])
     
     # Return everything
-    return {
+    result= {
+
         "answer": answer,
         "disclaimer": "This is not a diagnosis. Consult a healthcare professional.",
         "original_query": refined["original_query"],
@@ -70,5 +89,12 @@ def analyze_symptoms(user_input: str, user_location: dict = None):
         "needs_doctor": assessment["needs_doctor"],
         "recommended_specialization": recommended_spec,
         "doctors_nearby": doctors_list,
-        "remedies": remedies_list  # NEW: Add remedies to response
-    }
+        "remedies": remedies_list,  # NEW: Add remedies to response
+        "session_id": session_id  # return session_id
+   }
+     # Save this conversation to memory
+    add_to_history(session_id, user_input, result)
+    print(f" Saved to memory")
+    
+    return result
+    
