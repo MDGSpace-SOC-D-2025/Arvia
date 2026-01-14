@@ -183,8 +183,6 @@ class _SymptomCheckViewState extends State<SymptomCheckView> {
     );
   }
 
-  // NEW METHODS BELOW
-
   // Main method: decides which UI to show based on severity
  Widget _buildSeverityUI(SymptomSuccess state) {  // ← Changed parameter type
   final response = state.response;

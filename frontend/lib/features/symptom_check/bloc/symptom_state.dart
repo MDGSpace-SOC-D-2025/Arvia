@@ -1,5 +1,6 @@
 import '../data/models/symptom_response.dart';
 import '../data/models/symptom_response.dart';
+import '../data/models/doctor_info.dart';
 
 // Base class - all states extend this
 abstract class SymptomState {}
@@ -13,9 +14,9 @@ class SymptomLoading extends SymptomState {}
 // State 3: Success (got data)
 class SymptomSuccess extends SymptomState {
   final SymptomResponse response;
-  final bool isLoadingLocation;        // ← NEW! True while getting GPS
-  final List<DoctorInfo>? doctors;     // ← NEW! Nullable, starts as null
-  final String? locationError;         // ← NEW! Error message if permission denied
+  final bool isLoadingLocation;        // ←  True while getting GPS
+  final List<DoctorInfo>? doctors;     // ←  Nullable, starts as null means doc not tried to find
+  final String? locationError;         // ←  Error message if permission denied
   
   SymptomSuccess({
     required this.response,

@@ -8,7 +8,8 @@ class SymptomResponse {
   final List<String> remedies;
   final String? originalQuery;                    // ← NEW
   final String? recommendedSpecialization;        // ← NEW
-  final List<DoctorInfo> doctorsNearby;          // ← NEW
+  final List<DoctorInfo> doctorsNearby;     
+  final String? sessionId;            
   
   SymptomResponse({
     required this.answer,
@@ -16,9 +17,10 @@ class SymptomResponse {
     required this.needsDoctor,
     required this.disclaimer,
     required this.remedies,
-    this.originalQuery,                           // ← NEW (optional)
-    this.recommendedSpecialization,               // ← NEW (optional)
-    this.doctorsNearby = const [],                // ← NEW (default empty)
+    this.originalQuery,                           // ← (optional)
+    this.recommendedSpecialization,               // ← (optional)
+    this.doctorsNearby = const [],                // ← (default empty)
+    this.sessionId,  
   });
   
   factory SymptomResponse.fromJson(Map<String, dynamic> json) {
@@ -35,6 +37,7 @@ class SymptomResponse {
       doctorsNearby: (json['doctors_nearby'] as List<dynamic>?)  // ← NEW
           ?.map((item) => DoctorInfo.fromJson(item as Map<String, dynamic>))
           .toList() ?? [],
+           sessionId: json['session_id'] as String?,
     );
   }
 }
