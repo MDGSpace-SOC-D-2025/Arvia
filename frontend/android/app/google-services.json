@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "353537685218",
+    "project_id": "arvia-991",
+    "storage_bucket": "arvia-991.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:353537685218:android:838e465bfe3870ce16d0bb",
+        "android_client_info": {
+          "package_name": "com.begginers.soc25.arvia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARL1-cHmwaLBcdi_4w0ARVzR9CzsJRHJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
