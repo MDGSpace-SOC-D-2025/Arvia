@@ -4,29 +4,40 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4812edf6-8968-4032-b64a-31de0d71908d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/lib/core/services/session_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/core/services/test_session_service.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/diet/bloc/diet_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/diet/bloc/diet_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/diet/bloc/diet_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/diet/data/models/diet_plan_model.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/diet/data/repositories/diet_repository.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/symptom_check/bloc/symptom_bloc.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/symptom_check/bloc/symptom_event.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/symptom_check/bloc/symptom_state.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/symptom_check/data/models/doctor_info.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/symptom_check/data/models/symptom_response.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/symptom_check/data/repositories/symptom_repository.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/lib/features/symptom_check/presentation/symptom_check_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/test/widget_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/windows/flutter/generated_plugins.cmake" afterDir="false" />
+    <list default="true" id="4812edf6-8968-4032-b64a-31de0d71908d" name="Changes" comment="chore: versioned latest files">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/agents/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/agents/doctor_finder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/agents/query_refiner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/agents/severity_assessor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/data/symptom_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/document_builder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/generation_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/rag/indexing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routes/symptom.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/schemas/symptom_schema.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/memory_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/services/symptom_service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/auto_fix.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/check_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/list_models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/r.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/req.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/requirement.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/test_agent1.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/test_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/test_complete_pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/test_memory_basic.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/test_memory_integration.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/test_memory_retrieval.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/test_files/test_vector_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vector_db/symptom_vectorstore.faiss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vector_db/symptom_vectorstore.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo_ chatbot/rag_demo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +113,20 @@
       <option name="presentableId" value="Default" />
       <updated>1768461133249</updated>
     </task>
+    <task id="LOCAL-00001" summary="feature: updated app with latest backend">
+      <option name="closed" value="true" />
+      <created>1768472112500</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1768472112500</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feature: updated app with latest backend" />
+    <MESSAGE value="chore: versioned latest files" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: versioned latest files" />
   </component>
 </project>
