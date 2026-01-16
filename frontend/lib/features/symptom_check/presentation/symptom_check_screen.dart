@@ -49,8 +49,8 @@ class _SymptomCheckViewState extends State<SymptomCheckView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Symptom Checker'),
-        backgroundColor: Colors.blue,
+        title: Text('Arvia'),
+        backgroundColor: Color.fromARGB(255, 150, 219, 208),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
