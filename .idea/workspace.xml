@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4812edf6-8968-4032-b64a-31de0d71908d" name="Changes" comment="feature: added firebase dependencies for auth">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="4812edf6-8968-4032-b64a-31de0d71908d" name="Changes" comment="feature: changed theme color">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/features/symptom_check/presentation/symptom_check_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/features/symptom_check/presentation/symptom_check_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -131,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768479923508</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feature: changed theme color">
+      <option name="closed" value="true" />
+      <created>1768545262701</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1768545262702</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -140,6 +144,7 @@
     <MESSAGE value="chore: random updates" />
     <MESSAGE value="fix: updated dart files and fixed them" />
     <MESSAGE value="feature: added firebase dependencies for auth" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: added firebase dependencies for auth" />
+    <MESSAGE value="feature: changed theme color" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: changed theme color" />
   </component>
 </project>
