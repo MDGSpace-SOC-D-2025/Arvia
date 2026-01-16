@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:diet_app_recovered/features/onboarding/models/diet_plan_model.dart';
+import 'package:arvia/features/onboarding/models/diet_plan_model.dart';
 
 class WeeklyPlanPage extends StatelessWidget {
   final DietPlanModel plan;

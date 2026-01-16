@@ -1,6 +1,7 @@
 import 'dart:convert';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:arvia/features/onboarding/models/diet_plan_model.dart';
 import '../models/diet_plan_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageService {
   static const String _planKey = 'user_diet_plan_json';

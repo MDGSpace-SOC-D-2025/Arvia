@@ -1,11 +1,11 @@
-import 'package:diet_app_recovered/features/onboarding/screens/WeeklyPagePlan.dart';
-import 'package:diet_app_recovered/features/onboarding/screens/OnboardingWrapper.dart';
-import 'package:diet_app_recovered/features/onboarding/services/storage_service.dart';
-import 'package:flutter/material.dart';
+import 'package:arvia/features/onboarding/screens/WeeklyPagePlan.dart';
+import 'package:arvia/features/onboarding/screens/OnboardingWrapper.dart';
+import 'package:arvia/features/onboarding/services/storage_service.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingBloc.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingEvent.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingState.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingBloc.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingEvent.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingState.dart';
+import 'package:flutter/material.dart';
 
 class DailyMealPage extends StatelessWidget {
   const DailyMealPage({super.key});
@@ -105,7 +105,7 @@ class DailyMealPage extends StatelessWidget {
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: Card(
-                        color: Colors.blue.withValues(alpha: 0.05),
+                        color: Colors.blue.withOpacity( 0.05),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

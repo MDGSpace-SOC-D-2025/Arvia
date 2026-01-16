@@ -1,4 +1,4 @@
-import 'package:diet_app_recovered/features/onboarding/models/diet_plan_model.dart';
+import 'package:arvia/features/onboarding/models/diet_plan_model.dart';
 
 class OnboardingState {
   final List<String> goals;

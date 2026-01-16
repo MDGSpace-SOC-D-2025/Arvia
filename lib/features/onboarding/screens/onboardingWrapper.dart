@@ -1,18 +1,18 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingBloc.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingState.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingEvent.dart';
-import 'package:diet_app_recovered/features/onboarding/screens/ActivityLevelPage.dart';
-import 'package:diet_app_recovered/features/onboarding/screens/AllergyPage.dart';
-import 'package:diet_app_recovered/features/onboarding/screens/CuisinesPage.dart';
-import 'package:diet_app_recovered/features/onboarding/screens/DietTypePage.dart';
-import 'package:diet_app_recovered/features/onboarding/screens/GoalSelectionPage.dart';
-import 'package:diet_app_recovered/features/onboarding/screens/IntroductoryPage.dart';
-import 'package:diet_app_recovered/features/onboarding/screens/MedicalDietPage.dart';
-import 'package:diet_app_recovered/features/onboarding/screens/TargetWeightPage.dart';
-import 'package:diet_app_recovered/features/onboarding/screens/DailyMealPage.dart'; // Ensure this is imported
-import 'package:diet_app_recovered/features/onboarding/screens/OnboardingCompletePage.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingBloc.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingState.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingEvent.dart';
+import 'package:arvia/features/onboarding/screens/ActivityLevelPage.dart';
+import 'package:arvia/features/onboarding/screens/AllergyPage.dart';
+import 'package:arvia/features/onboarding/screens/CuisinesPage.dart';
+import 'package:arvia/features/onboarding/screens/DietTypePage.dart';
+import 'package:arvia/features/onboarding/screens/GoalSelectionPage.dart';
+import 'package:arvia/features/onboarding/screens/IntroductoryPage.dart';
+import 'package:arvia/features/onboarding/screens/MedicalDietPage.dart';
+import 'package:arvia/features/onboarding/screens/TargetWeightPage.dart';
+import 'package:arvia/features/onboarding/screens/DailyMealPage.dart';
+import 'package:arvia/features/onboarding/screens/OnboardingCompletePage.dart';
 
 class OnboardingWrapper extends StatelessWidget {
   const OnboardingWrapper({super.key});

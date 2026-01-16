@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'onboardingState.dart';
 import 'onboardingEvent.dart';
-import 'package:diet_app_recovered/features/onboarding/services/storage_service.dart';
-import 'package:diet_app_recovered/features/onboarding/models/diet_plan_model.dart';
+import 'package:arvia/features/onboarding/services/storage_service.dart';
+import 'package:arvia/features/onboarding/models/diet_plan_model.dart';
 
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   OnboardingBloc() : super(OnboardingState()) {
@@ -147,7 +147,6 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
         weeklyPlan: fullWeeklyPlan,
       );
 
-      // Await these so storage is finished before the state changes
       await StorageService().saveDietPlan(mockPlan);
       await StorageService().setOnboardingStatus(true);
 
@@ -155,7 +154,6 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
         state.copyWith(
           onboardingComplete: true,
           dietPlan: mockPlan,
-
           breakfastIndex: 0,
           lunchIndex: 0,
           dinnerIndex: 0,
@@ -165,30 +163,36 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     });
 
     on<SwapMealEvent>((event, emit) {
-      final dayCount = state.dietPlan?.weeklyPlan.length ?? 0;
+      final dietPlan = state.dietPlan;
+      if (dietPlan == null) return;
+      
+      final dayCount = dietPlan.weeklyPlan.length;
       if (dayCount == 0) return;
 
       final currentDayIndex = (DateTime.now().weekday - 1) % dayCount;
-      final dayPlan = state.dietPlan?.weeklyPlan[currentDayIndex];
+      final dayPlan = dietPlan.weeklyPlan[currentDayIndex];
 
-      if (dayPlan == null) return;
+      final meals = dayPlan.meals;
 
       if (event.mealType == "breakfast") {
-        int nextIndex =
-            (state.breakfastIndex + 1) %
-            (dayPlan.meals["breakfast"]?.length ?? 1);
+        final mealList = meals["breakfast"] ?? [];
+        if (mealList.isEmpty) return;
+        int nextIndex = ((state.breakfastIndex + 1) % mealList.length).toInt();
         emit(state.copyWith(breakfastIndex: nextIndex));
       } else if (event.mealType == "lunch") {
-        int nextIndex =
-            (state.lunchIndex + 1) % (dayPlan.meals["lunch"]?.length ?? 1);
+        final mealList = meals["lunch"] ?? [];
+        if (mealList.isEmpty) return;
+        int nextIndex = ((state.lunchIndex + 1) % mealList.length).toInt();
         emit(state.copyWith(lunchIndex: nextIndex));
       } else if (event.mealType == "dinner") {
-        int nextIndex =
-            (state.dinnerIndex + 1) % (dayPlan.meals["dinner"]?.length ?? 1);
+        final mealList = meals["dinner"] ?? [];
+        if (mealList.isEmpty) return;
+        int nextIndex = ((state.dinnerIndex + 1) % mealList.length).toInt();
         emit(state.copyWith(dinnerIndex: nextIndex));
       } else if (event.mealType == "snack") {
-        int nextIndex =
-            (state.snackIndex + 1) % (dayPlan.meals["snack"]?.length ?? 1);
+        final mealList = meals["snack"] ?? [];
+        if (mealList.isEmpty) return;
+        int nextIndex = ((state.snackIndex + 1) % mealList.length).toInt();
         emit(state.copyWith(snackIndex: nextIndex));
       }
     });

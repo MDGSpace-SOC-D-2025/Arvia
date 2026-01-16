@@ -1,9 +1,9 @@
-import 'package:diet_app_recovered/features/onboarding/screens/DailyMealPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 //import 'package:diet_app_recovered/features/onboarding/bloc/onboardingState.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingBloc.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingEvent.dart';
+import 'package:arvia/features/onboarding/screens/DailyMealPage.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingBloc.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingEvent.dart';
 
 class OnboardingCompletePage extends StatelessWidget {
   const OnboardingCompletePage({super.key});

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-//import 'package:flutter_diet/features/onboarding/bloc/onboardingState.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingBloc.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingEvent.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingBloc.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingEvent.dart';
 
 class DietTypePage extends StatelessWidget {
   const DietTypePage({super.key});
@@ -19,6 +18,7 @@ class DietTypePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = context.watch<OnboardingBloc>().state;
+    
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -38,31 +38,34 @@ class DietTypePage extends StatelessWidget {
           ),
 
           Expanded(
-            child: RadioGroup<String>(
-              groupValue: state.dietType,
-              onChanged: (String? newValue) {
-                if (newValue != null) {
-                  context.read<OnboardingBloc>().add(
-                    UpdateDietEvent(selectedDiet: newValue),
-                  );
-                }
+            child: ListView.builder(
+              itemCount: dietss.length,
+              itemBuilder: (context, index) {
+                final diet = dietss[index];
+                return RadioListTile<String>(
+                  title: Text(diet),
+                  value: diet,
+                  groupValue: state.dietType,
+                  onChanged: (String? newValue) {
+                    if (newValue != null) {
+                      context.read<OnboardingBloc>().add(
+                        UpdateDietEvent(selectedDiet: newValue),
+                      );
+                    }
+                  },
+                );
               },
-              child: ListView.builder(
-                itemCount: dietss.length,
-                itemBuilder: (context, index) {
-                  final diet = dietss[index];
-
-                  return RadioListTile<String>(title: Text(diet), value: diet);
-                },
-              ),
             ),
           ),
+          
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                ),
                 onPressed: state.dietType.isNotEmpty
                     ? () => context.read<OnboardingBloc>().add(NextStepEvent())
                     : null,

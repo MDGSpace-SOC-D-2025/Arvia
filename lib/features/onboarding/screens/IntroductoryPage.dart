@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingBloc.dart';
-import 'package:diet_app_recovered/features/onboarding/bloc/onboardingEvent.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingBloc.dart';
+import 'package:arvia/features/onboarding/bloc/onboardingEvent.dart';
 
 class IntroductoryPage extends StatelessWidget {
   const IntroductoryPage({super.key});
