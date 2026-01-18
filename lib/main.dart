@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'features/symptom_check/presentation/symptom_check_screen.dart';
 import 'package:arvia/core/services/test_session_service.dart';
-
-
-  
+import 'package:arvia/features/home/home_screen.dart';  
 
 void main() {
   testSessionService();
@@ -14,11 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Symptom Checker',
+      title: 'Arvia Health',  
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: SymptomCheckScreen(),   // First screen shown
+      home: const HomeScreen(),  //  starts with HomeScreen
+      debugShowCheckedModeBanner: false,  // removes debug banner
     );
   }
 }
