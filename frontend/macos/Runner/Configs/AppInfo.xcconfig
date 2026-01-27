@@ -8,7 +8,7 @@
 PRODUCT_NAME = arvia
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.begginers.soc25.arvia
+PRODUCT_BUNDLE_IDENTIFIER = com.example.arvia
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2025 com.begginers.soc25. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 com.example. All rights reserved.

@@ -8,8 +8,6 @@ import '../data/models/symptom_response.dart';
 import '../data/models/doctor_info.dart';
 
 class SymptomCheckScreen extends StatelessWidget {
-  const SymptomCheckScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     print('🟣 SymptomCheckScreen building');
@@ -24,8 +22,6 @@ class SymptomCheckScreen extends StatelessWidget {
 }
 
 class SymptomCheckView extends StatefulWidget {
-  const SymptomCheckView({super.key});
-
   @override
   State<SymptomCheckView> createState() => _SymptomCheckViewState();
 }
@@ -49,8 +45,8 @@ class _SymptomCheckViewState extends State<SymptomCheckView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Arvia'),
-        backgroundColor: Color.fromARGB(255, 150, 219, 208),
+        title: Text('Symptom Checker'),
+        backgroundColor: Colors.blue,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -310,7 +306,7 @@ class _SymptomCheckViewState extends State<SymptomCheckView> {
                           ),
                         ),
                       )
-                      ,
+                      .toList(),
                 ],
               ),
             ),
@@ -796,7 +792,7 @@ Widget _buildDoctorsList(List<DoctorInfo> doctors) {
             ),
           ],
         ),
-      )),
+      )).toList(),
     ],
   );
 }
