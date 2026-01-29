@@ -131,14 +131,14 @@ Located in `frontend/lib/features/symptom_check/data/repositories/symptom_reposi
 <img width="271" height="371" alt="image" src="https://github.com/user-attachments/assets/b30dfd60-955d-4e5f-85f3-4c76f2a497a4" />
 
 ### Diet Planner
-<img width="727" height="1600" alt="image" src="https://github.com/user-attachments/assets/b41e5b83-5f27-4558-a0cc-5beaabb7819d" />
-<img width="727" height="1600" alt="image" src="https://github.com/user-attachments/assets/7c15870a-6453-4668-bf72-60a42cc5fe4e" />
-<img width="727" height="1600" alt="image" src="https://github.com/user-attachments/assets/a0e1df4d-729d-4dca-b4ea-dfbb543fb6c6" />
-<img width="727" height="1600" alt="image" src="https://github.com/user-attachments/assets/552a0084-52bc-4f41-93ff-4fe944a7a134" />
-<img width="727" height="1600" alt="image" src="https://github.com/user-attachments/assets/ed1a906a-c505-4ee8-986d-48f1e6ae05af" />
-<img width="727" height="1600" alt="image" src="https://github.com/user-attachments/assets/0a859f15-dc81-446f-8be3-9767c2ffb613" />
-<img width="727" height="1600" alt="image" src="https://github.com/user-attachments/assets/fb3c2538-df13-4ea0-a07f-864d5153c529" />
-<img width="727" height="1600" alt="image" src="https://github.com/user-attachments/assets/d8e77c9c-ce16-4603-9f04-5c45d9b0a9eb" />
+<img width="271" height="600" alt="image" src="https://github.com/user-attachments/assets/b41e5b83-5f27-4558-a0cc-5beaabb7819d" />
+<img width="271" height="600" alt="image" src="https://github.com/user-attachments/assets/7c15870a-6453-4668-bf72-60a42cc5fe4e" />
+<img width="271" height="600" alt="image" src="https://github.com/user-attachments/assets/a0e1df4d-729d-4dca-b4ea-dfbb543fb6c6" />
+<img width="271" height="600" alt="image" src="https://github.com/user-attachments/assets/552a0084-52bc-4f41-93ff-4fe944a7a134" />
+<img width="271" height="600" alt="image" src="https://github.com/user-attachments/assets/ed1a906a-c505-4ee8-986d-48f1e6ae05af" />
+<img width="271" height="600" alt="image" src="https://github.com/user-attachments/assets/0a859f15-dc81-446f-8be3-9767c2ffb613" />
+<img width="271" height="600" alt="image" src="https://github.com/user-attachments/assets/fb3c2538-df13-4ea0-a07f-864d5153c529" />
+<img width="271" height="600" alt="image" src="https://github.com/user-attachments/assets/d8e77c9c-ce16-4603-9f04-5c45d9b0a9eb" />
 
 ---
 
