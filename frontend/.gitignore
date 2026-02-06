@@ -11,10 +11,6 @@
 .svn/
 .swiftpm/
 migrate_working_dir/
-.venv/
-.env
-__pycache__/
-**.pdf
 
 # IntelliJ related
 *.iml
@@ -47,18 +43,12 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-#swdha
+
+# Python/Backend related (if you have backend)
 venv/
 env/
 ENV/
-__pycache__/
 *.pyc
+__pycache__/
 .env
 .env.local
-
-app/test_files/
-app/vector_db/symptom_vectorstore.faiss
-app/vector_db/symptom_vectorstore.pkl
-
-
-.vscode
