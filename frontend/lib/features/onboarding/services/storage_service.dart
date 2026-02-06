@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:arvia/features/onboarding/models/diet_plan_model.dart';
-import '../models/diet_plan_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class StorageService {

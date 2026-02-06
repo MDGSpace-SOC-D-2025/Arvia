@@ -1,5 +1,4 @@
 import '../data/models/symptom_response.dart';
-import '../data/models/symptom_response.dart';
 import '../data/models/doctor_info.dart';
 
 // Base class - all states extend this
