@@ -1,3 +1,0 @@
-*.py filter=lfs diff=lfs merge=lfs -text
-app/vector_db/symptom_vectorstore.faiss filter=lfs diff=lfs merge=lfs -text
-app/vector_db/symptom_vectorstore.pkl filter=lfs diff=lfs merge=lfs -text
