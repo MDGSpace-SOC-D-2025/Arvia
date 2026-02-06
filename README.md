@@ -145,6 +145,7 @@ Located in `frontend/lib/features/symptom_check/data/repositories/symptom_reposi
 ## Project Structure
 
 ### BACKEND
+```
 app/ # Backend (FastAPI)
 │ ├── agents/ # AI Agents
 │ │ ├── query_refiner.py # Agent 1: Symptom refinement
@@ -188,7 +189,7 @@ frontend/
 │ │ └── services/
 │ └── main.dart
 
-
+```
 ---
 
 ## Roadmap
