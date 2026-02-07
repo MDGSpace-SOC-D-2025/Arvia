@@ -6,8 +6,10 @@ import json
 
 # Initialize Gemini for diet planning
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    temperature=0.7  # Higher temperature for creative meal variety
+    model="gemini-3-flash-preview",  # Latest stable model with good free tier
+    temperature=0.7 ,
+    google_api_key="AIzaSyC1RV_FxY6MIASI0oWlOJjwZWRCaFmJcuI"
+
 )
 
 # Prompt template for diet plan generation

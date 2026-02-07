@@ -6,8 +6,10 @@ from app.rag.indexing import SYMPTOM_VECTOR_STORE
 
 # Initialize Gemini LLM
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",  # Latest stable model with good free tier
-    temperature=0.3
+    model="gemini-3-flash-preview",  # Latest stable model with good free tier
+    temperature=0.3 ,
+    google_api_key="AIzaSyC1RV_FxY6MIASI0oWlOJjwZWRCaFmJcuI"
+
 )
 
 # Create retriever from vector store (returns top 3 similar docs)

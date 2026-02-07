@@ -5,8 +5,10 @@ from langchain_core.output_parsers import StrOutputParser
 # Separate Gemini instance for severity assessment
 # Different job from Agent-1, so separate config
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    temperature=0.1  # Very low temp for consistent, conservative severity decisions
+    model="gemini-3-flash-preview",  # Latest stable model with good free tier
+    temperature=0.1 ,
+    google_api_key="AIzaSyC1RV_FxY6MIASI0oWlOJjwZWRCaFmJcuI"
+
 )
 
 # Prompt teaches Gemini how to assess severity

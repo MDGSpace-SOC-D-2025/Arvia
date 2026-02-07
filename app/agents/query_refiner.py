@@ -3,8 +3,10 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 llm = ChatGoogleGenerativeAI(
-    model="gemini-2.5-flash",
-    temperature=0.1   # low randomness for consistent outputs
+    model="gemini-3-flash-preview",  # Latest stable model with good free tier
+    temperature=0.1 ,
+    google_api_key="AIzaSyC1RV_FxY6MIASI0oWlOJjwZWRCaFmJcuI"
+
 )
 
 # Teaching Gemini to extract symptoms and mark vague inputs
