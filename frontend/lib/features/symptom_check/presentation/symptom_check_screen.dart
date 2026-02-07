@@ -593,6 +593,7 @@ Widget _buildSevereUI(SymptomSuccess state) {  // ← CHANGED: Now takes state i
   }
   // Helper widget: Doctor finder section (button, loading, or list)
 Widget _buildDoctorFinderSection(SymptomSuccess state) {
+  // ignore: unused_local_variable
   final response = state.response;
   
   // Show error if permission denied
@@ -801,6 +802,7 @@ Widget _buildDoctorsList(List<DoctorInfo> doctors) {
   );
 }
   // OLD METHOD: Keep for color reference (not used in new UI)
+  // ignore: unused_element
   Color _getSeverityColor(String severity) {
     switch (severity.toUpperCase()) {
       case 'MILD':
